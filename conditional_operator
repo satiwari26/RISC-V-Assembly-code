@@ -1,0 +1,31 @@
+li x5, 0x11000000
+lw x6, 0(x5) 		#store the value from address x5 to register x6
+li x7, 0x00000003	#set immediate value of x7 to 0x00000003
+and x8,x7,x6		#perform and operation on x6,x7 value and store it in x8
+			# if the value is lsb 2bits is 0 we get 0 otherwise it will preserve 1's in lsb
+			
+beqz x8,invert		#if my lsb value is divisible by 4 jump to lable invrt
+li x9, 0x00000001	#store immideiate value 1
+and x10, x6,x9		#check if the last bit is 1 or 0
+
+beqz x10,sub1	#check if the value is 0, if it is jump to sub1
+
+li x18, 4095
+add x11,x6,x18		#add 4095 to x6 and store it in x11
+srli x6,x11,1		#shift it right by 1
+
+j end			#after all the conditions are done in false sequence jump to end.
+
+invert: not x6,x6	# invert the x6 value
+j end
+
+sub1: sub x6, x6,x9 	#subtract x6-x9 = x15
+j end
+
+end: sw x6, 0x40(x5)
+
+
+
+
+
+
