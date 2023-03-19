@@ -13,7 +13,8 @@ bgeu x7,x8,secondHalfCounter	#if second half is smaller make it counter
 loop: add x12,x12,x8
 addi x7,x7,-1
 bnez x7,loop
-j end
+j end		#the loops can be used in the assmebly file to slow down the processing of the software to make it compatible with the 
+		# timing of the hardware. The concept is introduce in the fibanachi sequence.
 
 secondHalfCounter: add x12,x12,x7
 addi x8,x8,-1
