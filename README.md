@@ -1,10 +1,4 @@
 # RISC-V
-Assembly repository for my 233 class
+This repository contains a collection of assembly code examples written specifically for the OTTER architecture. Assembly language is used to write low-level programs that can be executed by a computer's processor, and this repository highlights the unique characteristics and functionality of the OTTER architecture.
 
-30 real instructions have been learned so far with further changes to be made.
-
-Otter architecture have not been completed yet, still working on it and expected to finish it up by the end of this quarter. 
-
-Update have been made to the otter structure, capable of running all the assembly source code. 
-
-Working on the last component of the otter.
+One of the key features of the OTTER architecture is its ability to run any assembly code. This repository showcases some of the common examples of assembly code that can be run on the OTTER platform. These examples include basic arithmetic operations, memory manipulation, control flow, and system calls.
